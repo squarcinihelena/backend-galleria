@@ -1,5 +1,6 @@
 package com.galleria.backend.dto.request;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
@@ -12,7 +13,7 @@ public record PedidoRequestDTO(
         @NotNull(message = "O cliente é obrigatório")
         Long clienteId,
 
-        @NotEmpty(message = "O pedido deve ter pelo menos 1 produto")
-        List<ItemPedidoRequestDTO> itens
+        @NotEmpty(message = "O pedido deve ter pelo menos um item")
+        List<@Valid ItemPedidoRequestDTO> itens
 ) {
 }
