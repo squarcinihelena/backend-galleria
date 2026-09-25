@@ -60,7 +60,7 @@ public class UsuarioService {
 
             if (usuarioOpt.isPresent()) {
                 Usuario usuario = usuarioOpt.get();
-                String token = "Bearer " + jwtService.generateToken(usuario.getLogin());
+                String token = jwtService.generateToken(usuario.getLogin());
 
                 return Optional.of(new LoginResponseDTO(
                         usuario.getId(),
