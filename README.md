@@ -85,3 +85,22 @@ Authorization: Bearer <token>
 | GET | `/pedidos/{id}` | Busca pedido por id |
 
 Todas as rotas acima (exceto login e cadastro de usuário) exigem o header `Authorization`.
+
+
+## Como testar a API com o Insomnia
+
+Está disponivel a collection completa de testes na raiz do projeto:
+- Arquivo: `Insomnia-galleria.json`
+
+### Como importar:
+1. Abra o Insomnia.
+2. Vá em **Preferences** > **Data** > **Import Data** > **From File**.
+3. Selecione o arquivo `Insomnia-galleria.json`.
+
+### Fluxo recomendado de execução:
+1. Cadastrar Usuário (`POST /usuarios`)
+2. Login (`POST /usuarios/logar`) -> Copie o token retornado e configure nas variáveis/Auth
+3. Cadastrar Cliente (`POST /clientes`)
+4. Cadastrar Produto (`POST /produtos`)
+5. Criar Pedido (`POST /pedidos`)
+
